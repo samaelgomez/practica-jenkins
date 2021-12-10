@@ -11,3 +11,16 @@ jobs:
         run: |
           npm install
           npm run lint
+  
+  Cypress_job:
+    needs: Linter_job
+    runs-on: ubuntu-latest
+    name: Cypress job
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Cypress tests
+        if: always()
+        id: cypress-tests
+        uses: cypress-io/github-action@v2
+        run: echo ${{ steps.cypress-tests.outcome }}
