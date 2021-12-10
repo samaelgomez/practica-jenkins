@@ -1,0 +1,13 @@
+name: practica-ghactions-workflow
+on: [push]
+jobs:
+  Linter_job:
+    runs-on: ubuntu-latest
+    name: Linter job
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Check syntax
+        run: |
+          npm install
+          npm run lint
