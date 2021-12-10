@@ -26,5 +26,10 @@ jobs:
         with:
           build: npm run build
           start: npm start
+      - name: Add cypress tests outcome to file
+        run: echo ${{ steps.cypress-tests.outcome }} > result.txt
       - name: Create artifact
-        run: echo ${{ steps.cypress-tests.outcome }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: Result artifact
+          path: ./result.txt
