@@ -23,4 +23,5 @@ jobs:
         if: always()
         id: cypress-tests
         uses: cypress-io/github-action@v2
+      - name: Create artifact
         run: echo ${{ steps.cypress-tests.outcome }}
