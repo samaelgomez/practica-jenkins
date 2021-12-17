@@ -1736,18 +1736,10 @@ const cypressResult = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("c
 
     if (cypressResult == "success") {
         const replaceBadge = fileContent.replace(regex, "<!---Start place for the badge -->\nRESULTADO DE LOS ÚLTIMOS TESTS: https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg\n<!---End place for the badge -->/g");
-        (0,fs__WEBPACK_IMPORTED_MODULE_0__.writeFile)("./README.md", replaceBadge, function (e) {
-            if (e) {
-                console.log(e);
-            }
-        });
+        (0,fs__WEBPACK_IMPORTED_MODULE_0__.writeFileSync)("./README.md", replaceBadge);
     } else if (cypressResult == "failure") {
         const replaceBadge = fileContent.replace(regex, "<!---Start place for the badge -->\nRESULTADO DE LOS ÚLTIMOS TESTS: https://img.shields.io/badge/test-failure-red\n<!---End place for the badge -->/g");
-        (0,fs__WEBPACK_IMPORTED_MODULE_0__.writeFile)("./README.md", replaceBadge, function (e) {
-            if (e) {
-                console.log(e);
-            }
-        });
+        (0,fs__WEBPACK_IMPORTED_MODULE_0__.writeFileSync)("./README.md", replaceBadge);
     }
 })
 })();
