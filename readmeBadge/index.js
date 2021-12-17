@@ -2,7 +2,7 @@ import { readFile, writeFile } from "fs";
 import { getInput } from "@actions/core";
 const cypressResult = getInput("cypress-result");
 
-readFile("./README.md", function read(err, data) {
+readFile("./README.md", "utf8", function read(err, data) {
     if (err) {
         throw err;
     }

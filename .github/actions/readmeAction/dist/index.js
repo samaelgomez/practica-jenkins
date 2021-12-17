@@ -1726,7 +1726,7 @@ __nccwpck_require__.r(__webpack_exports__);
 
 const cypressResult = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("cypress-result");
 
-(0,fs__WEBPACK_IMPORTED_MODULE_0__.readFile)("./README.md", function read(err, data) {
+(0,fs__WEBPACK_IMPORTED_MODULE_0__.readFile)("./README.md", "utf8", function read(err, data) {
     if (err) {
         throw err;
     }
