@@ -1724,7 +1724,7 @@ __nccwpck_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nccwpck_require__.n(_actions_core__WEBPACK_IMPORTED_MODULE_1__);
 
 
-const cypressResult = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)('cypress-result');
+const cypressResult = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("cypress-result");
 
 (0,fs__WEBPACK_IMPORTED_MODULE_0__.readFile)("./README.md", function read(err, data) {
     if (err) {
@@ -1732,6 +1732,7 @@ const cypressResult = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)('c
     }
 
     let fileContent = data;
+    console.log(data);
     const regex = "<!---Start place for the badge -->\n(.*)\n<!---End place for the badge -->/g"
 
     if (cypressResult == "success") {

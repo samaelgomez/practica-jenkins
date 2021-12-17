@@ -1,6 +1,6 @@
-import { readFile, writeFile } from 'fs';
-import { getInput } from '@actions/core';
-const cypressResult = getInput('cypress-result');
+import { readFile, writeFile } from "fs";
+import { getInput } from "@actions/core";
+const cypressResult = getInput("cypress-result");
 
 readFile("./README.md", function read(err, data) {
     if (err) {
@@ -8,6 +8,7 @@ readFile("./README.md", function read(err, data) {
     }
 
     let fileContent = data;
+    console.log(data);
     const regex = "<!---Start place for the badge -->\n(.*)\n<!---End place for the badge -->/g"
 
     if (cypressResult == "success") {
