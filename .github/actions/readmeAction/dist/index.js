@@ -1726,21 +1726,28 @@ __nccwpck_require__.r(__webpack_exports__);
 
 const cypressResult = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("cypress-result");
 
-(0,fs__WEBPACK_IMPORTED_MODULE_0__.readFile)("./README.md", "utf8", function read(err, data) {
-    if (err) {
-        throw err;
+(0,fs__WEBPACK_IMPORTED_MODULE_0__.readFile)("./README.md", "utf8", function (e, data) {
+    if (e) {
+        throw e;
     }
 
     let fileContent = data;
-    console.log(data);
     const regex = "<!---Start place for the badge -->\n(.*)\n<!---End place for the badge -->/g"
 
     if (cypressResult == "success") {
         const replaceBadge = fileContent.replace(regex, "<!---Start place for the badge -->\nRESULTADO DE LOS ÚLTIMOS TESTS: https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg\n<!---End place for the badge -->/g");
-        (0,fs__WEBPACK_IMPORTED_MODULE_0__.writeFile)("./README.md", replaceBadge);
+        (0,fs__WEBPACK_IMPORTED_MODULE_0__.writeFile)("./README.md", replaceBadge, function (e) {
+            if (e) {
+                console.log(e);
+            }
+        });
     } else if (cypressResult == "failure") {
         const replaceBadge = fileContent.replace(regex, "<!---Start place for the badge -->\nRESULTADO DE LOS ÚLTIMOS TESTS: https://img.shields.io/badge/test-failure-red\n<!---End place for the badge -->/g");
-        (0,fs__WEBPACK_IMPORTED_MODULE_0__.writeFile)("./README.md", replaceBadge);
+        (0,fs__WEBPACK_IMPORTED_MODULE_0__.writeFile)("./README.md", replaceBadge, function (e) {
+            if (e) {
+                console.log(e);
+            }
+        });
     }
 })
 })();
