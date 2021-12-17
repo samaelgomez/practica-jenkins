@@ -1680,7 +1680,7 @@ var fs = __nccwpck_require__(147);
 var core = __nccwpck_require__(864);
 
 const cypressResult = core.getInput("cypress-result");
-const fileContent = fs.readFileSync("../README.md", "utf8");
+const fileContent = fs.readFileSync("./README.md", "utf8");
 const regex = new RegExp(/<!---Start place for the badge -->\n(.*)\n<!---End place for the badge -->/g);
 
 if (cypressResult == "success") {
