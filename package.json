@@ -16,5 +16,19 @@
   "devDependencies": {
     "cypress": "^9.1.1",
     "eslint-config-next": "12.0.7"
-  }
+  },
+  "name": "practica-ghactions",
+  "description": "Example of nextjs project using Cypress.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samaelgomez/practica-ghactions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samaelgomez/practica-ghactions/issues"
+  },
+  "homepage": "https://github.com/samaelgomez/practica-ghactions#readme"
 }
