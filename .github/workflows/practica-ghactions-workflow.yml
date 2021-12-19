@@ -75,7 +75,7 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
   
   Notification_job:
-    needs: Deploy_job
+    needs: [Linter_job, Cypress_job, Add_badge_job, Deploy_job]
     if: always()
     runs-on: ubuntu-latest
     name: Send notification email
@@ -86,7 +86,7 @@ jobs:
         uses: ./.github/actions/emailAction
         with:
           postmail-token: ${{ secrets.POSTMAIL_TOKEN }}
-          linter-result: ${{ job.Linter_job.result }}
-          cypress-result: ${{ job.Cypress_job.result }}
-          add-badge-result: ${{ job.Add_badge_job.result }}
-          deploy-result: ${{ job.Deploy_job.result }}
+          linter-result: ${{ needs.job.Linter_job.result }}
+          cypress-result: ${{ needs.job.Cypress_job.result }}
+          add-badge-result: ${{ needs.job.outputs.cypress-result }}
+          deploy-result: ${{ needs.job.Deploy_job.result }}
