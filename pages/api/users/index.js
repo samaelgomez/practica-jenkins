@@ -16,7 +16,7 @@ function handler(req, res) {
 
   function getUsers() {
     const users = usersRepo.getAll();
-    return res.status(200).json(users);
+    return a;
   }
 
   function createUser() {
