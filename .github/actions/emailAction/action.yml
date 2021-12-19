@@ -1,0 +1,21 @@
+name: "Email action"
+description: "Sends email using inputs"
+inputs:
+  postmail-token:
+    description: "Postmail token"
+    required: true
+  linter-result:
+    description: "Linter job result"
+    required: true
+  cypress-result:
+    description: "Cypress tests result"
+    required: true
+  add-badge-result:
+    description: "Add badge job result"
+    required: true
+  deploy-result:
+    description: "Vercel deployment result"
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

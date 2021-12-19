@@ -73,3 +73,20 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+  
+  Notification_job:
+    needs: Deploy_job
+    if: always()
+    runs-on: ubuntu-latest
+    name: Send notification email
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Send email
+        uses: ./.github/actions/emailAction
+        with:
+          postmail-token: ${{ secrets.POSTMAIL_TOKEN }}
+          linter-result: ${{ job.Linter_job.result }}
+          cypress-result: ${{ job.Cypress_job.result }}
+          add-badge-result: ${{ job.Add_badge_job.result }}
+          deploy-result: ${{ job.Deploy_job.result }}
