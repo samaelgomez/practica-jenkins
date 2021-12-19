@@ -57,8 +57,7 @@ jobs:
           git config user.email "samaelgomezherrera@gmail.com"
           git config user.name "samaelgomez"
           git add .
-          git commit -m "README badge update"
-          git push origin master
+          if [ git diff --cached --exit-code == 1 ]; then; git commit -m "README badge update"; git push origin master; fi
   
   Deploy_job:
     needs: Cypress_job
@@ -88,5 +87,5 @@ jobs:
           postmail-token: ${{ secrets.POSTMAIL_TOKEN }}
           linter-result: ${{ needs.Linter_job.result }}
           cypress-result: ${{ needs.Cypress_job.result }}
-          add-badge-result: ${{ needs.Add_badge_job.outputs.cypress-result }}
+          add-badge-result: ${{ needs.Add_badge_job.steps.test-result-step.outputs.cypress-result }}
           deploy-result: ${{ needs.Deploy_job.result }}
