@@ -4,6 +4,7 @@ let TOTAL_USERS = 10;
 
 describe("Test de endpoints", () => {
   before(() => {
+    throw console.error("failure");
     cy.visit("/");
     cy.request("DELETE", "api/users", {}).then((response) => {
       expect(response.body).to.have.property("message", `All users deleted`);

@@ -1732,7 +1732,7 @@ const regex = new RegExp(/<!---Start place for the badge -->\n(.*)\n<!---End pla
 if (cypressResult == "success") {
     const replaceBadge = fileContent.replace(regex, "<!---Start place for the badge -->\nRESULTADO DE LOS ÚLTIMOS TESTS: [![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)\n<!---End place for the badge -->");
     (0,fs__WEBPACK_IMPORTED_MODULE_0__.writeFileSync)("./README.md", replaceBadge);
-} else if (cypressResult == "failure") {
+} else {
     const replaceBadge = fileContent.replace(regex, "<!---Start place for the badge -->\nRESULTADO DE LOS ÚLTIMOS TESTS: [![Cypress.io](https://img.shields.io/badge/test-failure-red)](https://www.cypress.io/)\n<!---End place for the badge -->");
     (0,fs__WEBPACK_IMPORTED_MODULE_0__.writeFileSync)("./README.md", replaceBadge);
 }
