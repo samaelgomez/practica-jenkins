@@ -1,6 +1,10 @@
 Vercel deployment: https://practica-ghactions.vercel.app/
 
 # Pràctica GitHub Actions
+## Què es GitHub Actions?
+GitHub Actions ens permet afegir als nostres repositoris el que anomenem com a "workflows", el qual ens permet automatitzar una gran quantitat de processos que voldríem que es feren cada vegada que ferem una determinada acció, com un push. Aquesta funcionalitat ens permet estalviar temps i treballar d'una manera més còmoda.  
+
+## Realització de la pràctica
 Primer que tot prepararem l'entorn on treballarem amb el nou directori i clone.  
 ![1](https://user-images.githubusercontent.com/61690297/146692761-7a4b7742-3e3d-4a73-99ee-fddbf90cc2d7.jpg)  
 
@@ -23,7 +27,7 @@ De manera que ja no ens dóna cap error i el job acaba satisfactòriament.
 ![7](https://user-images.githubusercontent.com/61690297/146692914-53e4504d-3538-471a-be9f-641752698fb0.jpg)  
 
 ## Cypress
-Per al job de Cypress haurem de ficar el needs per a que es faça sempre després de Linter i li fiquem el if always per a que sempre s'execute.  
+Per al job de Cypress haurem de ficar el needs per a que es faça sempre després de Linter i li fiquem el if always per a que sempre s'execute.
 A més, en el step de l'action de Cypress li fiquem un id per a poder accedir al seu outcome en el següent step i muntem l'artefacte.  
 ![8](https://user-images.githubusercontent.com/61690297/146692996-3bccc12c-d29a-47a8-929b-40f9a1a74dc4.jpg)  
 
