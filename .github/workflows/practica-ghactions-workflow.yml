@@ -86,7 +86,7 @@ jobs:
         uses: ./.github/actions/emailAction
         with:
           postmail-token: ${{ secrets.POSTMAIL_TOKEN }}
-          linter-result: ${{ needs.job.Linter_job.result }}
-          cypress-result: ${{ needs.job.Cypress_job.result }}
-          add-badge-result: ${{ needs.job.outputs.cypress-result }}
-          deploy-result: ${{ needs.job.Deploy_job.result }}
+          linter-result: ${{ needs.Linter_job.result }}
+          cypress-result: ${{ needs.Cypress_job.result }}
+          add-badge-result: ${{ needs.outputs.cypress-result }}
+          deploy-result: ${{ needs.Deploy_job.result }}
