@@ -17,7 +17,7 @@ var data_js = {
 var request = new XMLHttpRequest();
 
 var subject = "Resultado del workflow ejecutado";
-var message = "- linter_job: " + getInput("linter-result") + "\n- cypress_job: " + getInput("cypress-result") + "\n- add_badge_job: " + getInput("add-badge-result") + "\n- deploy_job: " + getInput("deploy-result");
+var message = "Se ha realizado un push en la rama main que ha provocado la ejecución del workflow nombre_repositorio_workflow con los siguientes resultados:\n- linter_job: " + getInput("linter-result") + "\n- cypress_job: " + getInput("cypress-result") + "\n- add_badge_job: " + getInput("add-badge-result") + "\n- deploy_job: " + getInput("deploy-result");
 data_js['subject'] = subject;
 data_js['text'] = message;
 var params = toParams(data_js);
