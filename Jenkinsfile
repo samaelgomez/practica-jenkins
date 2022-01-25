@@ -18,7 +18,7 @@ pipeline {
         }
         stage ("Linter") {
             steps {
-                sh "npm lint"
+                sh "npm run lint"
             }
         }
     }
