@@ -5,4 +5,16 @@ pipeline {
         string(name: 'Motivo', description: 'Motivo de la ejecución')
         string(name: 'Correo notificación', description: 'Correo para notificar el resultado de las stages')
     }
+    
+    triggers {
+        pollSCM('* */3 * * *')
+    }
+
+    stages {
+        stage ("Test") {
+            steps {
+                console.log("Funcione")
+            }
+        }
+    }
 }
