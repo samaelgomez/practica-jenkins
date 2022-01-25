@@ -11,9 +11,14 @@ pipeline {
     }
 
     stages {
-        stage ("Test") {
+        stage ("Install dependencies") {
             steps {
-                echo "Funcione"
+                sh "npm install"
+            }
+        }
+        stage ("Linter") {
+            steps {
+                sh "npm run lint"
             }
         }
     }
