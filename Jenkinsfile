@@ -16,9 +16,16 @@ pipeline {
                 sh "npm install"
             }
         }
+
         stage ("Linter") {
             steps {
                 sh "npm run lint"
+            }
+        }
+
+        stage ("Test") {
+            steps {
+                sh "npm run cypress"
             }
         }
     }
