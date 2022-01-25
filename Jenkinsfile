@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage ("Test") {
             steps {
-                console.log("Funcione")
+                echo "Funcione"
             }
         }
     }
