@@ -1,9 +1,0 @@
-# name: "Badge action"
-# description: "Updates readme depending on tests result"
-# inputs:
-#   cypress-result:
-#     description: "Cypress tests result"
-#     required: true
-# runs:
-#   using: 'node12'
-#   main: 'dist/index.js'
