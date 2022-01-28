@@ -25,7 +25,7 @@ pipeline {
 
         stage ("Test") {
             steps {
-                sh "npx cypress run"
+                sh "./node_modules/.bin/cypress run"
             }
         }
     }
