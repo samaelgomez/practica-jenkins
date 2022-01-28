@@ -13,10 +13,10 @@ pipeline {
     stages {
         stage ("Install dependencies") {
             steps {
-                sh "npm ci"
+                sh "npm ci && apt-get install xvfb"
             }
         }
-        
+
         stage ("Linter") {
             steps {
                 sh "npm run lint"
