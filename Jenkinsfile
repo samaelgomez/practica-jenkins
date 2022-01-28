@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage ("Install dependencies") {
             steps {
-                sh "npm ci && apt-get install xvfb"
+                sh "npm ci && apt-get install xvfb -y"
             }
         }
 
