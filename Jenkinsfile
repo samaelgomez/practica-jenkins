@@ -13,7 +13,15 @@ pipeline {
     stages {
         stage ("Install dependencies and start server") {
             steps {
-                sh "npm ci && apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb -y && npm run dev"
+                parallel (
+                    "Install dependencies" : {
+                        sh "npm ci && apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb -y"
+                    },
+                    "Start server" : {
+                        sh "npm run dev"
+                    }
+                )
+                
             }
         }
 
