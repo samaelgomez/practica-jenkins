@@ -7,7 +7,7 @@ pipeline {
     }
     
     triggers {
-        pollSCM('* */3 * * *')
+        pollSCM('H H/3 * * *')
     }
 
     stages {
@@ -16,7 +16,7 @@ pipeline {
                 sh "npm ci"
             }
         }
-
+        º
         stage ("Linter") {
             steps {
                 sh "npm run lint"
