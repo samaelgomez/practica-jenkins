@@ -23,7 +23,7 @@
   "name": "practica-ghactions",
   "description": "Example of nextjs project using Cypress.io",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./pages/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samaelgomez/practica-ghactions.git"
