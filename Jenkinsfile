@@ -25,7 +25,10 @@ pipeline {
 
         stage ("Test") {
             steps {
-                sh "npx cypress run"
+                script {
+                    env.CYPRESS_RESULT = sh(script: "npx cypress run", returnStatus:true)
+                    sh "echo ${env.CYPRESS_RESULT}"
+                }
             }
         }
     }
