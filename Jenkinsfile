@@ -11,22 +11,17 @@ pipeline {
     }
 
     stages {
-        stage ("Install dependencies and start server") {
+        stage ("Install dependencies") {
             steps {
-                sh "npm ci && apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb -y"
+                sh "npm install && apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb -y && npm run build && (npm run start&)"
             }
         }
 
         stage ("Linter") {
             steps {
-                parallel (
-                    "Linter tests" : {
-                        sh "npm run lint"
-                    },
-                    "Start server" : {
-                        sh "npm run dev"
-                    }
-                )
+                "Linter tests" : {
+                    sh "npm run lint"
+                }
             }
         }
 
