@@ -32,11 +32,15 @@ pipeline {
         }
 
         stage ("Update_Readme") {
-            sh "node jenkinsScripts/index.js ${env.CYPRESS_RESULT}"
+            steps {
+                sh "node jenkinsScripts/index.js ${env.CYPRESS_RESULT}"
+            }
         }
 
         stage ("Push_Changes") {
-            sh "jenkinsScripts/pushChanges.sh ${params.Ejecutor} ${params.Motivo}"
+            steps {
+                sh "jenkinsScripts/pushChanges.sh ${params.Ejecutor} ${params.Motivo}"
+            }
         }
     }
 }
