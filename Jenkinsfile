@@ -27,9 +27,16 @@ pipeline {
             steps {
                 script {
                     env.CYPRESS_RESULT = sh(script: "npx cypress run", returnStatus:true)
-                    sh "echo ${env.CYPRESS_RESULT}"
                 }
             }
+        }
+
+        stage ("Update_Readme") {
+            sh "node jenkinsScripts/index.js ${env.CYPRESS_RESULT}"
+        }
+
+        stage ("Push_Changes") {
+            sh "jenkinsScripts/pushChanges.sh ${params.Ejecutor} ${params.Motivo}"
         }
     }
 }
