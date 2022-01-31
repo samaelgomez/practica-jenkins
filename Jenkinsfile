@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage ("Install dependencies") {
             steps {
-                sh "npm install && apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb -y && ./node_modules/.bin/cypress.cmd install --force && npm run build && (npm run start&)"
+                sh "npm install && apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb -y && npm run build && (npm run start&)"
             }
         }
 
