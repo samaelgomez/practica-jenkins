@@ -5,6 +5,10 @@ pipeline {
         string(name: 'Motivo', description: 'Motivo de la ejecución')
         string(name: 'Correo notificación', description: 'Correo para notificar el resultado de las stages')
     }
+
+    environment {
+        jenkinsRepository = credentials("JenkinsRepository")
+    }
     
     triggers {
         pollSCM('H H/3 * * *')
@@ -39,7 +43,7 @@ pipeline {
 
         stage ("Push_Changes") {
             steps {
-                sh "./jenkinsScripts/pushChanges.sh ${params.Ejecutor} ${params.Motivo}"
+                sh "./jenkinsScripts/pushChanges.sh ${params.Ejecutor} ${params.Motivo} ${env.jenkinsRepository}"
             }
         }
     }
