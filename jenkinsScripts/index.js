@@ -1,4 +1,4 @@
-var fs = require("fs")
+var fs = require("fs");
 
 const cypressResult = process.argv[2];
 const fileContent = fs.readFileSync("./README.md", "utf8");
