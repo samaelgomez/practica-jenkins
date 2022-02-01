@@ -1,6 +1,8 @@
 <!---Start place for the badge -->
 RESULTADO DE LOS ÚLTIMOS TESTS: [![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
 <!---End place for the badge -->
+
+Vercel: https://practica-jenkins-seven.vercel.app/
   
 # Pràctica Jenkins  
 En aquesta pràctica realitzarem una sèrie d'activitats sobre Jenkins.  
@@ -94,4 +96,21 @@ Per a comprovar que realment funciona com deu, anem a forçar un error de Cypres
 ![28](https://user-images.githubusercontent.com/61690297/152003029-56454f90-5429-4264-a772-8c5ea0e4f515.jpg)  
   
 I finalment fem un altre push i tornem a mirar el README. Podem veure que ha canviat a failure degut a l'error.  
-![29](https://user-images.githubusercontent.com/61690297/152003596-a96194df-a96e-461c-884c-e0bb33505f30.jpg)
+![29](https://user-images.githubusercontent.com/61690297/152003596-a96194df-a96e-461c-884c-e0bb33505f30.jpg)  
+  
+## Vercel  
+Abans de tocar cap fitxer primer necessitem una token de Vercel, per a aconseguir-la anem a la pàgina de Vercel i iniciem sessió. Després anem a Settings -> Tokens i ahí la generem amb el nom que vulgam.  
+![30](https://user-images.githubusercontent.com/61690297/152022357-500d2ea4-db08-4861-b3da-066b0cba3af5.jpg)  
+  
+Com haurem de comprovar que la resta de stages s'han realitzat amb èxit hem d'afegir-les a variables com la de Cypress per a poder enviar-les a l'script que farem després. També fem la stage on cridem al fitxer que ara crearem passant-li els tres resultats i la token que hem generat i afegit a credentials junt a la del repositori.  
+![31](https://user-images.githubusercontent.com/61690297/152022772-e96cbce9-4246-495c-bc5e-6b087d409e41.jpg)  
+  
+Ara anem a jenkinsScripts i creem el nostre vercel.sh passant-li la token, el nom del projecte i confirmant les possibles preguntes.  
+![32](https://user-images.githubusercontent.com/61690297/152023026-d7dfad87-823f-4565-9151-4742c041e4c3.jpg)  
+  
+Novament fem push i build i ja ens diu que s'ha deployejat correctament.  
+![33 5](https://user-images.githubusercontent.com/61690297/152023428-64153100-b0c6-4cd8-b340-e019576a60f3.jpg)  
+  
+Si anem al nostre Vercel veurem que ens ha aparegut un nou projecte i que podem accedir al seu contingut amb èxit.  
+![33](https://user-images.githubusercontent.com/61690297/152023651-89337e18-cdd4-4056-837c-b28a74291e82.jpg)  
+![34](https://user-images.githubusercontent.com/61690297/152023762-866e0a8e-a242-41ab-9bb7-bb97752f9a4a.jpg)
