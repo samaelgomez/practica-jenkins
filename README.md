@@ -44,5 +44,5 @@ Per a afegir Linter primer haurem de fer un "npm install" per a que instal·le l
 ![10](https://user-images.githubusercontent.com/61690297/151977516-d4836432-7072-404d-955b-adf166021dc0.jpg)  
   
 <!---Start place for the badge -->
-RESULTADO DE LOS ÚLTIMOS TESTS: Test
+RESULTADO DE LOS ÚLTIMOS TESTS: [![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
 <!---End place for the badge -->
