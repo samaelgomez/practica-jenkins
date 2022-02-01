@@ -43,4 +43,6 @@ Veiem que quan passa el temps que li indiquem al trigger ens apareix automàtica
 Per a afegir Linter primer haurem de fer un "npm install" per a que instal·le les dependències necessàries. Una vegada acabat fem el "npm run lint" en la següent stage.  
 ![10](https://user-images.githubusercontent.com/61690297/151977516-d4836432-7072-404d-955b-adf166021dc0.jpg)  
   
-  
+<!---Start place for the badge -->
+RESULTADO DE LOS ÚLTIMOS TESTS: Test
+<!---End place for the badge -->
