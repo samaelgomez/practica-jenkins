@@ -8,6 +8,7 @@ pipeline {
 
     environment {
         jenkinsRepository = credentials("JenkinsRepository")
+        vercelToken = credentials("vercelToken")
     }
     
     triggers {
@@ -23,7 +24,9 @@ pipeline {
 
         stage ("Linter") {
             steps {
-                sh "npm run lint"
+                script {
+                    env.LINTER_RESULT = sh(script: "npm run lint", returnStatus:true)
+                }
             }
         }
 
@@ -37,13 +40,23 @@ pipeline {
 
         stage ("Update_Readme") {
             steps {
-                sh "node ./jenkinsScripts/index.js ${env.CYPRESS_RESULT}"
+                script {
+                    env.README_RESULT = sh(script: "node ./jenkinsScripts/index.js ${env.CYPRESS_RESULT}", returnStatus:true)
+                }
             }
         }
 
         stage ("Push_Changes") {
             steps {
-                sh "./jenkinsScripts/pushChanges.sh ${params.Ejecutor} ${params.Motivo} ${env.jenkinsRepository}"
+                script {
+                    sh "./jenkinsScripts/pushChanges.sh ${params.Ejecutor} ${params.Motivo} ${env.jenkinsRepository}"
+                }
+            }
+        }
+
+        stage ("Deploy_to_Vercel") {
+            steps {
+                sh "./jenkinsScripts/vercel.sh ${env.LINTER_RESULT} ${env.CYPRESS_RESULT} ${env.README_RESULT} ${env.vercelToken}"
             }
         }
     }
