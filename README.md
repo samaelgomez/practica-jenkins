@@ -1,3 +1,7 @@
+<!---Start place for the badge -->
+RESULTADO DE LOS ÚLTIMOS TESTS: [![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
+<!---End place for the badge -->
+  
 # Pràctica Jenkins  
 En aquesta pràctica realitzarem una sèrie d'activitats sobre Jenkins.  
 
@@ -90,8 +94,4 @@ Per a comprovar que realment funciona com deu, anem a forçar un error de Cypres
 ![28](https://user-images.githubusercontent.com/61690297/152003029-56454f90-5429-4264-a772-8c5ea0e4f515.jpg)  
   
 I finalment fem un altre push i tornem a mirar el README. Podem veure que ha canviat a failure degut a l'error.  
-![29](https://user-images.githubusercontent.com/61690297/152003596-a96194df-a96e-461c-884c-e0bb33505f30.jpg)  
-  
-<!---Start place for the badge -->
-RESULTADO DE LOS ÚLTIMOS TESTS: [![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
-<!---End place for the badge -->
+![29](https://user-images.githubusercontent.com/61690297/152003596-a96194df-a96e-461c-884c-e0bb33505f30.jpg)
