@@ -93,5 +93,5 @@ I finalment fem un altre push i tornem a mirar el README. Podem veure que ha can
 ![29](https://user-images.githubusercontent.com/61690297/152003596-a96194df-a96e-461c-884c-e0bb33505f30.jpg)  
   
 <!---Start place for the badge -->
-RESULTADO DE LOS ÚLTIMOS TESTS: [![Cypress.io](https://img.shields.io/badge/test-failure-red)](https://www.cypress.io/)
+RESULTADO DE LOS ÚLTIMOS TESTS: [![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
 <!---End place for the badge -->
